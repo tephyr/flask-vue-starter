@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   backend:
     restart: always
@@ -14,7 +12,8 @@ services:
         # See also: https://github.com/docker/compose/issues/2380
         UID: $UID
         GID: $GID
-
+    depends_on:
+      - postgresql
     entrypoint: ./docker-entrypoint.sh
     command: flask run
     volumes:
@@ -36,6 +35,8 @@ services:
       args:
         - UID=$UID
         - GID=$GID
+    depends_on:
+      - backend
     user: "node"
     command: /bin/bash -c "yarn install && yarn serve"
     volumes:

@@ -1,5 +1,3 @@
-[![CircleCI](https://circleci.com/gh/serebrov/flask-vue-starter.svg?style=svg)](https://circleci.com/gh/serebrov/flask-vue-starter)
-
 Starter example app: Flask (SQLAlchemy, PostgreSQL) + Vue.js (Typescript), docker setup for backend and frontend.
 
 Backend is powered by Flask, flask-rest-api, marshmallow and SQLAlchemy to create a solid framework for REST API backend development:
@@ -31,7 +29,7 @@ Frontend setup:
 - Code formatting with prettier
 
 Note: on linux, to fix permissions between host / docker shared containers, it is necessary to export `$UID` and `$GID` variables, this can be done in ~/.bashrc or ~/.zshrc.
-This is becuase UID and GID are shell variables, not env variables.
+This is because UID and GID are shell variables, not env variables.
 It allows to have dependencies (python venv and node.js node_modules shared from the container to the host, so we can have IDE completion on the host, or just easily access the dependencies from the editor).
 See also: https://github.com/docker/compose/issues/2380.
 
